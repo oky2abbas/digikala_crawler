@@ -14,13 +14,13 @@ import (
 func main() {
 	url := os.Args[1]
 	if downloadFromURL(url) {
-		parsHTML("f.html")
+		parsHTML("sourse.html")
 	}
 }
 
 func downloadFromURL(url string) bool {
 	// tokens := strings.Split(url, "/")
-	fileName := "f.html" //tokens[len(tokens)-1]
+	fileName := "sourse.html" //tokens[len(tokens)-1]
 	fmt.Println("Downloading", url, "to", fileName)
 
 	// TODO: check file existence first with io.IsExist
@@ -143,14 +143,17 @@ func parsHTML(name string) {
 
 	ss := string(b)
 	r := strings.NewReader(ss)
+
 	start := "<div class=\"c-product__seller-price-raw js-price-value\">"
 	end := "</div>"
+
 	str := NewSkipTillReader(r, []byte(start))
-	rtr := NewReadTillReader(str, []byte("</span>"))
+	rtr := NewReadTillReader(str, []byte(end))
 	bs, err := ioutil.ReadAll(rtr)
 
 	sts := strings.Replace(string(bs), start, "", -1)
 	sts = strings.Replace(sts, end, "", -1)
 
+	fmt.Println("\033[H\033[2J")
 	fmt.Println(sts, err)
 }

@@ -35,3 +35,23 @@ Temporary Items
 
 # End of https://www.gitignore.io/api/macos
 n
+
+# Created by https://www.gitignore.io/api/visualstudiocode,bash,sheelscrypt
+# Edit at https://www.gitignore.io/?templates=visualstudiocode,bash,sheelscrypt
+
+#!! ERROR: bash is undefined. Use list command to see defined gitignore types !!#
+
+#!! ERROR: sheelscrypt is undefined. Use list command to see defined gitignore types !!#
+
+### VisualStudioCode ###
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+### VisualStudioCode Patch ###
+# Ignore all local history of files
+.history
+
+# End of https://www.gitignore.io/api/visualstudiocode,bash,sheelscrypt
